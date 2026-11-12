@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -6,1058 +6,777 @@
 <title>The Psychology of Love · A Campus Field Guide</title>
 <meta name="description" content="Seven real uni moments, one question: what does relationship science say about love that lasts? An interactive quiz for university students." />
 <meta name="theme-color" content="#1d0b13" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z' fill='%23c4415f'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath fill='%23c4415f' d='M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z' transform='translate(0 -3)'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Caveat:wght@500;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
- :root {
-   --night: #1d0b13;
-   --night-2: #2a1019;
-   --wine: #4d1426;
-   --rose: #c4415f;
-   --rose-soft: #e48a9e;
-   --blush: #f4d5d9;
-   --paper: #f8f0e5;
-   --paper-2: #f1e5d5;
-   --paper-line: #e3d2bd;
-   --ink: #2a1419;
-   --ink-soft: #6b4e52;
-   --gold: #c9a063;
-   --good: #3e7a5b;
-   --good-bg: #e3efe4;
-   --bad: #a8344a;
-   --bad-bg: #f7e0e0;
-   --display: 'Instrument Serif', 'Times New Roman', serif;
-   --hand: 'Caveat', cursive;
-   --sans: 'Hanken Grotesk', 'Helvetica Neue', sans-serif;
-   --ease: cubic-bezier(.2, .8, .2, 1);
- }
-
-
-
-
- * { box-sizing: border-box; margin: 0; padding: 0; }
- html { -webkit-text-size-adjust: 100%; }
-
-
-
-
- body {
-   font-family: var(--sans);
-   color: var(--paper);
-   background: var(--night);
-   min-height: 100vh;
-   overflow-x: hidden;
- }
-
-
-
-
- /* ---------- Atmosphere ---------- */
- .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
- .glow { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .55; will-change: transform; }
- .glow.g1 { width: 46vw; height: 46vw; left: -12vw; top: -14vw; background: #6a1833; animation: drift 22s ease-in-out infinite alternate; }
- .glow.g2 { width: 38vw; height: 38vw; right: -10vw; bottom: -12vw; background: #8a2f45; opacity: .4; animation: drift 26s ease-in-out infinite alternate-reverse; }
- .glow.g3 { width: 22vw; height: 22vw; left: 38vw; top: 50vh; background: #5a2340; opacity: .35; animation: drift 30s ease-in-out infinite alternate; }
- @keyframes drift { to { transform: translate(4vw, 3vh) scale(1.08); } }
-
-
-
-
- .grain {
-   position: fixed; inset: -50%; z-index: 50; pointer-events: none; opacity: .07;
-   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
- }
-
-
-
-
- .petals span {
-   position: absolute; bottom: -40px; opacity: 0;
-   animation: rise linear infinite;
- }
- .petals svg { display: block; width: 100%; height: 100%; fill: var(--rose-soft); }
- @keyframes rise {
-   0% { transform: translate3d(0,0,0) rotate(0); opacity: 0; }
-   12% { opacity: var(--o, .18); }
-   85% { opacity: calc(var(--o, .18) * .6); }
-   100% { transform: translate3d(var(--dx, 30px), -112vh, 0) rotate(var(--rot, 40deg)); opacity: 0; }
- }
-
-
-
-
- /* ---------- Layout ---------- */
- .shell {
-   position: relative; z-index: 1;
-   max-width: 1180px; margin: 0 auto;
-   min-height: 100vh;
-   display: grid;
-   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-   gap: clamp(28px, 5vw, 72px);
-   padding: clamp(28px, 5vw, 64px) clamp(18px, 4vw, 48px);
-   align-items: start;
- }
-
-
-
-
- /* ---------- Cover (left) ---------- */
- .cover { position: sticky; top: clamp(28px, 5vw, 64px); padding-top: 12px; }
-
-
-
-
- .masthead {
-   display: flex; align-items: center; gap: 10px;
-   font-size: .72rem; font-weight: 600; letter-spacing: .26em; text-transform: uppercase;
-   color: var(--rose-soft);
-   opacity: 0; animation: up .9s var(--ease) .1s forwards;
- }
- .masthead i { flex: 0 0 34px; height: 1px; background: currentColor; opacity: .6; }
-
-
-
-
- .cover h1 {
-   font-family: var(--display); font-weight: 400;
-   font-size: clamp(3.2rem, 7.4vw, 6.4rem);
-   line-height: .9; letter-spacing: -.02em;
-   margin: 22px 0 22px;
-   color: var(--paper);
- }
- .cover h1 span { display: block; opacity: 0; animation: up 1s var(--ease) forwards; }
- .cover h1 span:nth-child(1) { animation-delay: .2s; }
- .cover h1 span:nth-child(2) { animation-delay: .32s; padding-left: .55em; }
- .cover h1 span:nth-child(3) { animation-delay: .44s; }
- .cover h1 em { font-style: italic; color: var(--rose-soft); }
- .cover h1 .amp { font-style: italic; color: var(--gold); font-size: .8em; }
-
-
-
-
- .lede {
-   max-width: 34ch; color: #d9c3c3; font-size: 1.02rem; line-height: 1.6;
-   opacity: 0; animation: up 1s var(--ease) .56s forwards;
- }
- .scribble {
-   font-family: var(--hand); font-size: 1.5rem; color: var(--gold);
-   transform: rotate(-3deg); display: inline-block; margin-top: 18px;
-   opacity: 0; animation: up 1s var(--ease) .7s forwards;
- }
-
-
-
-
- .tracker {
-   margin-top: 40px; padding-top: 22px;
-   border-top: 1px solid rgba(244, 213, 217, .16);
-   opacity: 0; animation: up 1s var(--ease) .8s forwards;
- }
- .tracker-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
- .big-num { font-family: var(--display); font-size: 3.4rem; line-height: 1; color: var(--paper); }
- .big-num small { font-size: 1.3rem; color: #a98a8f; margin-left: 4px; }
- .tracker-label { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: #a98a8f; font-weight: 600; }
- .hearts-row { display: flex; gap: 8px; flex-wrap: wrap; }
- .hearts-row svg { width: 26px; height: 24px; transition: transform .4s var(--ease); }
- .hearts-row svg { fill: transparent; stroke: rgba(244, 213, 217, .32); stroke-width: 1.4; transition: transform .4s var(--ease), fill .4s ease, stroke .4s ease; overflow: visible; }
- .hearts-row .now { transform: scale(1.18); stroke: var(--rose-soft); }
- .hearts-row .won { fill: var(--rose); stroke: var(--rose); }
- .hearts-row .lost { fill: rgba(244, 213, 217, .12); stroke: rgba(244, 213, 217, .4); stroke-dasharray: 2 2; }
-
-
-
-
- .credits { margin-top: 32px; font-size: .78rem; color: #8f7276; line-height: 1.55; max-width: 36ch; font-style: italic; font-family: var(--display); font-size: .98rem; }
-
-
-
-
- /* ---------- Stage (right): the letter ---------- */
- .stage { position: relative; }
- .letter {
-   position: relative;
-   background:
-     radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,.55), transparent 60%),
-     linear-gradient(180deg, var(--paper), var(--paper-2));
-   color: var(--ink);
-   border-radius: 6px 6px 6px 6px;
-   padding: clamp(28px, 4.5vw, 56px) clamp(22px, 4.5vw, 56px) clamp(26px, 4vw, 44px);
-   box-shadow:
-     0 1px 0 rgba(255,255,255,.6) inset,
-     0 40px 80px -30px rgba(0,0,0,.65),
-     0 18px 30px -18px rgba(0,0,0,.5);
-   transform: rotate(.6deg);
-   opacity: 0; animation: landing 1.1s var(--ease) .35s forwards;
- }
- .letter::before {
-   /* soft ruled lines */
-   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-   background: repeating-linear-gradient(180deg, transparent 0 33px, rgba(180, 140, 110, .11) 33px 34px);
-   mask-image: linear-gradient(180deg, transparent 0, #000 120px, #000 85%, transparent);
- }
- .letter::after {
-   /* tape */
-   content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 30px;
-   transform: translateX(-50%) rotate(-2.5deg);
-   background: rgba(244, 213, 217, .55);
-   backdrop-filter: blur(2px);
-   box-shadow: 0 2px 6px rgba(0,0,0,.12);
- }
- @keyframes landing { from { opacity: 0; transform: translateY(40px) rotate(3deg); } to { opacity: 1; transform: translateY(0) rotate(.6deg); } }
- @keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
-
-
-
-
- .view { position: relative; }
- .view[hidden] { display: none; }
- .view.enter > *:not(.note) { opacity: 0; animation: up .6s var(--ease) forwards; }
- .view.enter > *:nth-child(1) { animation-delay: .02s; }
- .view.enter > *:nth-child(2) { animation-delay: .08s; }
- .view.enter > *:nth-child(3) { animation-delay: .14s; }
- .view.enter > *:nth-child(4) { animation-delay: .2s; }
- .view.enter > *:nth-child(5) { animation-delay: .26s; }
- .view.enter > *:nth-child(6) { animation-delay: .32s; }
- .view.enter > *:nth-child(7) { animation-delay: .38s; }
-
-
-
-
- /* Intro */
- .salutation { font-family: var(--hand); font-size: 2rem; color: var(--rose); margin-bottom: 10px; }
- .intro-body { font-family: var(--display); font-size: clamp(1.35rem, 2.3vw, 1.7rem); line-height: 1.4; color: var(--ink); }
- .intro-body em { color: var(--rose); }
- .intro-list { list-style: none; margin: 28px 0 32px; display: grid; gap: 12px; }
- .intro-list li { display: flex; gap: 14px; align-items: flex-start; font-size: .98rem; color: var(--ink-soft); line-height: 1.5; }
- .intro-list .n { flex: 0 0 auto; font-family: var(--display); font-style: italic; font-size: 1.3rem; color: var(--rose); line-height: 1.1; width: 1.4em; }
- .sign { font-family: var(--hand); font-size: 1.6rem; color: var(--ink-soft); margin-top: 6px; }
- .sign b { color: var(--rose); font-weight: 700; }
-
-
-
-
- /* Question */
- .q-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 18px; }
- .q-kicker { font-size: .7rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-soft); }
- .q-kicker b { color: var(--rose); }
-
-
-
-
- .stamp {
-   flex: 0 0 auto; position: relative;
-   max-width: 190px;
-   padding: 10px 12px 9px;
-   background: #fffaf2;
-   color: var(--wine);
-   font-size: .66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; line-height: 1.35;
-   text-align: center;
-   transform: rotate(3deg);
-   box-shadow: 0 6px 14px -8px rgba(60, 20, 30, .5);
-   -webkit-mask: radial-gradient(circle 4px at 4px 4px, transparent 98%, #000) -4px -4px / 9px 9px;
-           mask: radial-gradient(circle 4px at 4px 4px, transparent 98%, #000) -4px -4px / 9px 9px;
- }
- .stamp-inner { border: 1px solid rgba(77, 20, 38, .35); padding: 8px 8px 7px; }
- .stamp-inner svg { width: 16px; height: 16px; display: block; margin: 0 auto 4px; fill: var(--rose); }
-
-
-
-
- .q-title {
-   font-family: var(--display); font-weight: 400;
-   font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.02; letter-spacing: -.01em;
-   color: var(--ink); margin-bottom: 16px;
- }
- .q-text { font-size: 1.04rem; line-height: 1.68; color: #4a3236; margin-bottom: 26px; max-width: 58ch; }
-
-
-
-
- .options { display: grid; gap: 10px; }
- .opt {
-   position: relative;
-   font: inherit; text-align: left; color: var(--ink);
-   display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: center;
-   padding: 14px 18px 14px 14px;
-   background: rgba(255, 252, 246, .72);
-   border: 1px solid var(--paper-line);
-   border-radius: 14px;
-   cursor: pointer;
-   font-size: .98rem; line-height: 1.45;
-   transition: transform .25s var(--ease), border-color .25s, background .25s, box-shadow .25s;
- }
- .opt:hover:not(:disabled) {
-   transform: translateX(6px) rotate(-.3deg);
-   border-color: var(--rose-soft);
-   background: #fffdf9;
-   box-shadow: -6px 10px 24px -16px rgba(120, 30, 50, .55);
- }
- .opt:active:not(:disabled) { transform: translateX(3px) scale(.99); }
- .opt:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
- .opt:disabled { cursor: default; }
- .opt .key {
-   width: 34px; height: 34px; border-radius: 50%;
-   display: grid; place-items: center;
-   font-family: var(--display); font-style: italic; font-size: 1.2rem;
-   color: var(--rose); border: 1px solid var(--paper-line); background: #fff;
-   transition: background .25s, color .25s, border-color .25s;
- }
- .opt.correct { background: var(--good-bg); border-color: var(--good); }
- .opt.correct .key { background: var(--good); border-color: var(--good); color: #fff; }
- .opt.wrong { background: var(--bad-bg); border-color: var(--bad); animation: shake .45s ease; }
- .opt.wrong .key { background: var(--bad); border-color: var(--bad); color: #fff; }
- .opt.dim { opacity: .45; }
- .opt .mark { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-family: var(--hand); font-size: 1.25rem; font-weight: 700; }
- .opt.correct .mark { color: var(--good); }
- .opt.wrong .mark { color: var(--bad); }
- .opt.correct, .opt.wrong { padding-right: 96px; }
- @keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
-
-
-
-
- /* Margin note feedback */
- .note {
-   margin-top: 26px; position: relative;
-   padding: 22px 22px 20px 26px;
-   background: #fff6d9;
-   border-radius: 2px;
-   transform: rotate(-.8deg);
-   box-shadow: 0 14px 24px -16px rgba(60, 30, 10, .45);
-   color: #3b2a1c;
- }
- .note[hidden] { display: none; }
- .note.show { animation: stick .55s var(--ease); }
- @keyframes stick { from { opacity: 0; transform: translateY(-10px) rotate(-3deg) scale(.97); } to { opacity: 1; transform: rotate(-.8deg); } }
- .note-verdict { font-family: var(--hand); font-size: 1.75rem; font-weight: 700; line-height: 1.05; margin-bottom: 10px; }
- .note-verdict.ok { color: var(--good); }
- .note-verdict.no { color: var(--bad); }
- .note-label { display: flex; align-items: center; gap: 8px; font-size: .66rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #8b6a3e; margin-bottom: 4px; }
- .note-label svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.6; }
- .note-science { font-size: .95rem; line-height: 1.6; }
- .note-take { margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(139, 106, 62, .35); font-family: var(--display); font-style: italic; font-size: 1.18rem; line-height: 1.35; color: var(--wine); }
-
-
-
-
- .actions { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
- .hint { font-size: .76rem; color: #a08a80; }
- .hint kbd { font-family: var(--sans); font-size: .7rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--paper-line); background: #fff; color: var(--ink-soft); }
-
-
-
-
- .btn {
-   position: relative; overflow: hidden;
-   font: inherit; font-weight: 600; font-size: .98rem; letter-spacing: .01em;
-   display: inline-flex; align-items: center; gap: 10px;
-   color: var(--paper); background: var(--wine);
-   border: none; border-radius: 999px;
-   padding: 15px 26px;
-   cursor: pointer;
-   box-shadow: 0 14px 26px -14px rgba(77, 20, 38, .9);
-   transition: transform .25s var(--ease), box-shadow .25s, background .25s, opacity .25s;
- }
- .btn svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
- .btn:hover:not(:disabled) { transform: translateY(-2px); background: #5e1a2f; box-shadow: 0 18px 30px -14px rgba(77, 20, 38, 1); }
- .btn:hover:not(:disabled) svg { transform: translateX(4px); }
- .btn:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
- .btn:disabled { background: #d9c9bb; color: #9c8778; box-shadow: none; cursor: not-allowed; }
- .btn.ghost { background: transparent; color: var(--wine); box-shadow: inset 0 0 0 1px var(--paper-line); }
- .btn.ghost:hover { background: #fff; }
-
-
-
-
- /* Results */
- .result-top { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; margin-bottom: 26px; }
- .seal { position: relative; width: 150px; height: 140px; }
- .seal svg { width: 100%; height: 100%; overflow: visible; }
- .seal .fill { transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.6s var(--ease) .25s; }
- .seal .num { position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: 12px; font-family: var(--display); font-size: 2.5rem; color: var(--paper); text-shadow: 0 2px 10px rgba(60, 10, 25, .45); }
- .seal .num small { font-size: 1.1rem; opacity: .8; }
- .r-kicker { font-size: .7rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; }
- .r-rank { font-family: var(--display); font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1; color: var(--ink); }
- .r-rank em { color: var(--rose); }
- .r-desc { font-size: 1.04rem; line-height: 1.65; color: #4a3236; margin-bottom: 26px; max-width: 60ch; }
-
-
-
-
- .concepts { border-top: 1px solid var(--paper-line); padding-top: 20px; }
- .concepts h3 { font-family: var(--hand); font-size: 1.6rem; font-weight: 700; color: var(--ink-soft); margin-bottom: 12px; }
- .concepts ol { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; counter-reset: c; }
- .concepts li { counter-increment: c; display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-bottom: 1px dotted var(--paper-line); font-size: .9rem; color: var(--ink-soft); }
- .concepts li::before { content: counter(c, decimal-leading-zero); font-family: var(--display); font-style: italic; color: #b9a291; font-size: .95rem; }
- .concepts li.got { color: var(--ink); }
- .concepts li.got::before { color: var(--good); }
- .concepts li .tick { margin-left: auto; font-family: var(--hand); font-size: 1.15rem; font-weight: 700; }
- .concepts li.got .tick { color: var(--good); }
- .concepts li:not(.got) .tick { color: #c1a99a; }
-
-
-
-
- .ps { margin-top: 26px; font-family: var(--hand); font-size: 1.4rem; color: var(--rose); line-height: 1.25; }
- .result-actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
-
-
-
-
- /* Heart burst */
- .burst { position: fixed; z-index: 60; pointer-events: none; width: 0; height: 0; }
- .burst i {
-   position: absolute; left: -8px; top: -8px; width: 16px; height: 15px;
-   background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z' transform='translate(0 -3)' fill='%23c4415f'/%3E%3C/svg%3E");
-   animation: pop 1s var(--ease) forwards;
- }
- @keyframes pop {
-   0% { transform: translate(0,0) scale(.3) rotate(0); opacity: 1; }
-   100% { transform: translate(var(--x), var(--y)) scale(var(--s)) rotate(var(--r)); opacity: 0; }
- }
-
-
-
-
- .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-
-
-
- /* ---------- Responsive ---------- */
- @media (max-width: 920px) {
-   .shell { grid-template-columns: 1fr; gap: 28px; }
-   .cover { position: relative; top: 0; }
-   .cover h1 { font-size: clamp(3rem, 13vw, 4.6rem); margin: 16px 0 14px; }
-   .tracker { margin-top: 24px; }
-   .credits { display: none; }
-   .credits.mobile { display: block; margin: 8px auto 0; text-align: center; }
- }
- @media (min-width: 921px) { .credits.mobile { display: none; } }
- @media (max-width: 560px) {
-   .letter { transform: none; animation-name: up; }
-   .q-head { flex-direction: column-reverse; }
-   .stamp { align-self: flex-end; margin-top: -8px; }
-   .result-top { grid-template-columns: 1fr; justify-items: start; gap: 14px; }
-   .concepts ol { grid-template-columns: 1fr; }
-   .hint { display: none; }
-   .actions { justify-content: flex-end; }
-   .opt.correct, .opt.wrong { padding-right: 18px; }
-   .opt .mark { position: static; transform: none; grid-column: 2; font-size: 1.1rem; margin-top: -6px; }
- }
- @media (prefers-reduced-motion: reduce) {
-   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; }
-   .petals, .glow { display: none; }
- }
+  :root {
+    --night: #1d0b13;
+    --night-2: #2a1019;
+    --wine: #4d1426;
+    --rose: #c4415f;
+    --rose-soft: #e48a9e;
+    --blush: #f4d5d9;
+    --paper: #f8f0e5;
+    --paper-2: #f1e5d5;
+    --paper-line: #e3d2bd;
+    --ink: #2a1419;
+    --ink-soft: #6b4e52;
+    --gold: #c9a063;
+    --good: #3e7a5b;
+    --good-bg: #e3efe4;
+    --bad: #a8344a;
+    --bad-bg: #f7e0e0;
+    --display: 'Instrument Serif', 'Times New Roman', serif;
+    --hand: 'Caveat', cursive;
+    --sans: 'Hanken Grotesk', 'Helvetica Neue', sans-serif;
+    --ease: cubic-bezier(.2, .8, .2, 1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    color: var(--paper);
+    background: var(--night);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  /* ---------- Atmosphere ---------- */
+  .sky { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+  .glow { position: absolute; border-radius: 50%; filter: blur(80px); opacity: .55; }
+  .glow.g1 { width: 46vw; height: 46vw; left: -12vw; top: -14vw; background: #6a1833; animation: drift 22s ease-in-out infinite alternate; }
+  .glow.g2 { width: 38vw; height: 38vw; right: -10vw; bottom: -12vw; background: #8a2f45; opacity: .4; animation: drift 26s ease-in-out infinite alternate-reverse; }
+  .glow.g3 { width: 22vw; height: 22vw; left: 38vw; top: 50vh; background: #5a2340; opacity: .35; animation: drift 30s ease-in-out infinite alternate; }
+  @keyframes drift { to { transform: translate(4vw, 3vh) scale(1.08); } }
+  .grain {
+    position: fixed; inset: -50%; z-index: 50; pointer-events: none; opacity: .06;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .petals span {
+    position: absolute; bottom: -40px; opacity: 0;
+    animation: rise linear infinite;
+  }
+  .petals svg { display: block; width: 100%; height: 100%; fill: var(--rose-soft); }
+  @keyframes rise {
+    0% { transform: translate3d(0,0,0) rotate(0); opacity: 0; }
+    12% { opacity: var(--o, .18); }
+    85% { opacity: calc(var(--o, .18) * .6); }
+    100% { transform: translate3d(var(--dx, 30px), -112vh, 0) rotate(var(--rot, 40deg)); opacity: 0; }
+  }
+  /* ---------- Layout ---------- */
+  .shell {
+    position: relative; z-index: 2;
+    max-width: 1180px; margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(28px, 5vw, 72px);
+    padding: clamp(28px, 5vw, 64px) clamp(18px, 4vw, 48px);
+    align-items: start;
+  }
+  /* ---------- Cover (left) ---------- */
+  .cover { position: sticky; top: clamp(28px, 5vw, 64px); padding-top: 12px; }
+  .masthead {
+    display: flex; align-items: center; gap: 10px;
+    font-size: .72rem; font-weight: 600; letter-spacing: .26em; text-transform: uppercase;
+    color: var(--rose-soft);
+  }
+  .masthead i { flex: 0 0 34px; height: 1px; background: currentColor; opacity: .6; }
+  .cover h1 {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(3.2rem, 7.4vw, 6.4rem);
+    line-height: .9; letter-spacing: -.02em;
+    margin: 22px 0 22px;
+    color: var(--paper);
+  }
+  .cover h1 span { display: block; }
+  .cover h1 span:nth-child(2) { padding-left: .55em; }
+  .cover h1 em { font-style: italic; color: var(--rose-soft); }
+  .lede {
+    max-width: 34ch; color: #d9c3c3; font-size: 1.02rem; line-height: 1.6;
+  }
+  .scribble {
+    font-family: var(--hand); font-size: 1.5rem; color: var(--gold);
+    transform: rotate(-3deg); display: inline-block; margin-top: 18px;
+  }
+  .tracker {
+    margin-top: 40px; padding-top: 22px;
+    border-top: 1px solid rgba(244, 213, 217, .16);
+  }
+  .tracker-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+  .big-num { font-family: var(--display); font-size: 3.4rem; line-height: 1; color: var(--paper); }
+  .big-num small { font-size: 1.3rem; color: #a98a8f; margin-left: 4px; }
+  .tracker-label { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: #a98a8f; font-weight: 600; }
+  .hearts-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .hearts-row svg {
+    width: 26px; height: 24px;
+    fill: transparent; stroke: rgba(244, 213, 217, .32); stroke-width: 1.4;
+    transition: transform .4s var(--ease), fill .4s ease, stroke .4s ease; overflow: visible;
+  }
+  .hearts-row .now { transform: scale(1.18); stroke: var(--rose-soft); }
+  .hearts-row .won { fill: var(--rose); stroke: var(--rose); }
+  .hearts-row .lost { fill: rgba(244, 213, 217, .12); stroke: rgba(244, 213, 217, .4); stroke-dasharray: 2 2; }
+  .credits { margin-top: 32px; color: #8f7276; line-height: 1.55; max-width: 36ch; font-style: italic; font-family: var(--display); font-size: .98rem; }
+
+  /* ---------- Stage (right): the letter ---------- */
+  .stage { position: relative; z-index: 5; }
+  .letter {
+    position: relative;
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,.55), transparent 60%),
+      linear-gradient(180deg, var(--paper), var(--paper-2));
+    color: var(--ink);
+    border-radius: 6px;
+    padding: clamp(28px, 4.5vw, 56px) clamp(22px, 4.5vw, 56px) clamp(26px, 4vw, 44px);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.6) inset,
+      0 40px 80px -30px rgba(0,0,0,.65),
+      0 18px 30px -18px rgba(0,0,0,.5);
+    transform: rotate(.6deg);
+  }
+  .letter::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    background: repeating-linear-gradient(180deg, transparent 0 33px, rgba(180, 140, 110, .11) 33px 34px);
+  }
+  .letter::after {
+    content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 30px;
+    transform: translateX(-50%) rotate(-2.5deg);
+    background: rgba(244, 213, 217, .55);
+    box-shadow: 0 2px 6px rgba(0,0,0,.12);
+    pointer-events: none;
+  }
+
+  /* Views: Explicit display control so screens NEVER get stuck hidden */
+  .view { position: relative; z-index: 2; display: none; }
+  .view.active { display: block; animation: fadeUp .45s var(--ease); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Intro */
+  .salutation { font-family: var(--hand); font-size: 2rem; color: var(--rose); margin-bottom: 10px; }
+  .intro-body { font-family: var(--display); font-size: clamp(1.35rem, 2.3vw, 1.7rem); line-height: 1.4; color: var(--ink); }
+  .intro-body em { color: var(--rose); }
+  .intro-list { list-style: none; margin: 28px 0 32px; display: grid; gap: 12px; }
+  .intro-list li { display: flex; gap: 14px; align-items: flex-start; font-size: .98rem; color: var(--ink-soft); line-height: 1.5; }
+  .intro-list .n { flex: 0 0 auto; font-family: var(--display); font-style: italic; font-size: 1.3rem; color: var(--rose); line-height: 1.1; width: 1.4em; }
+  .sign { font-family: var(--hand); font-size: 1.6rem; color: var(--ink-soft); margin-top: 6px; }
+  .sign b { color: var(--rose); font-weight: 700; }
+
+  /* Question */
+  .q-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 18px; }
+  .q-kicker { font-size: .7rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-soft); }
+  .q-kicker b { color: var(--rose); }
+  .stamp {
+    flex: 0 0 auto; position: relative;
+    max-width: 190px;
+    padding: 10px 12px 9px;
+    background: #fffaf2;
+    color: var(--wine);
+    font-size: .66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; line-height: 1.35;
+    text-align: center;
+    transform: rotate(3deg);
+    box-shadow: 0 6px 14px -8px rgba(60, 20, 30, .5);
+  }
+  .stamp-inner { border: 1px solid rgba(77, 20, 38, .35); padding: 8px 8px 7px; }
+  .stamp-inner svg { width: 16px; height: 16px; display: block; margin: 0 auto 4px; fill: var(--rose); }
+  .q-title {
+    font-family: var(--display); font-weight: 400;
+    font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.02; letter-spacing: -.01em;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .q-text { font-size: 1.04rem; line-height: 1.68; color: #4a3236; margin-bottom: 26px; max-width: 58ch; }
+  .options { display: grid; gap: 10px; }
+  .opt {
+    position: relative;
+    font: inherit; text-align: left; color: var(--ink);
+    display: grid; grid-template-columns: 34px 1fr; gap: 14px; align-items: center;
+    padding: 14px 18px 14px 14px;
+    background: rgba(255, 252, 246, .85);
+    border: 1px solid var(--paper-line);
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: .98rem; line-height: 1.45;
+    transition: transform .25s var(--ease), border-color .25s, background .25s, box-shadow .25s;
+  }
+  .opt:hover:not(:disabled) {
+    transform: translateX(6px) rotate(-.3deg);
+    border-color: var(--rose-soft);
+    background: #fffdf9;
+    box-shadow: -6px 10px 24px -16px rgba(120, 30, 50, .55);
+  }
+  .opt:disabled { cursor: default; }
+  .opt .key {
+    width: 34px; height: 34px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--display); font-style: italic; font-size: 1.2rem;
+    color: var(--rose); border: 1px solid var(--paper-line); background: #fff;
+  }
+  .opt.correct { background: var(--good-bg); border-color: var(--good); padding-right: 96px; }
+  .opt.correct .key { background: var(--good); border-color: var(--good); color: #fff; }
+  .opt.wrong { background: var(--bad-bg); border-color: var(--bad); padding-right: 96px; animation: shake .45s ease; }
+  .opt.wrong .key { background: var(--bad); border-color: var(--bad); color: #fff; }
+  .opt.dim { opacity: .45; }
+  .opt .mark { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-family: var(--hand); font-size: 1.25rem; font-weight: 700; }
+  .opt.correct .mark { color: var(--good); }
+  .opt.wrong .mark { color: var(--bad); }
+  @keyframes shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+
+  /* Margin note feedback */
+  .note {
+    margin-top: 26px; position: relative;
+    padding: 22px 22px 20px 26px;
+    background: #fff6d9;
+    border-radius: 2px;
+    transform: rotate(-.8deg);
+    box-shadow: 0 14px 24px -16px rgba(60, 30, 10, .45);
+    color: #3b2a1c;
+    display: none;
+  }
+  .note.show { display: block; animation: fadeUp .4s var(--ease); }
+  .note-verdict { font-family: var(--hand); font-size: 1.75rem; font-weight: 700; line-height: 1.05; margin-bottom: 10px; }
+  .note-verdict.ok { color: var(--good); }
+  .note-verdict.no { color: var(--bad); }
+  .note-label { display: flex; align-items: center; gap: 8px; font-size: .66rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: #8b6a3e; margin-bottom: 4px; }
+  .note-label svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+  .note-science { font-size: .95rem; line-height: 1.6; }
+  .note-take { margin-top: 12px; padding-top: 12px; border-top: 1px dashed rgba(139, 106, 62, .35); font-family: var(--display); font-style: italic; font-size: 1.18rem; line-height: 1.35; color: var(--wine); }
+
+  .actions { margin-top: 28px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; position: relative; z-index: 10; }
+  .hint { font-size: .76rem; color: #a08a80; }
+  .hint kbd { font-family: var(--sans); font-size: .7rem; padding: 2px 6px; border-radius: 4px; border: 1px solid var(--paper-line); background: #fff; color: var(--ink-soft); }
+  .btn {
+    position: relative; z-index: 10;
+    font: inherit; font-weight: 600; font-size: .98rem; letter-spacing: .01em;
+    display: inline-flex; align-items: center; gap: 10px;
+    color: var(--paper); background: var(--wine);
+    border: none; border-radius: 999px;
+    padding: 15px 26px;
+    cursor: pointer;
+    box-shadow: 0 14px 26px -14px rgba(77, 20, 38, .9);
+    transition: transform .25s var(--ease), box-shadow .25s, background .25s;
+  }
+  .btn svg { width: 18px; height: 18px; transition: transform .3s var(--ease); pointer-events: none; }
+  .btn:hover:not(:disabled) { transform: translateY(-2px); background: #5e1a2f; }
+  .btn:hover:not(:disabled) svg { transform: translateX(4px); }
+  .btn:disabled { background: #d9c9bb; color: #9c8778; box-shadow: none; cursor: not-allowed; }
+  .btn.ghost { background: transparent; color: var(--wine); box-shadow: inset 0 0 0 1px var(--paper-line); }
+  .btn.ghost:hover { background: #fff; }
+
+  /* Results */
+  .result-top { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; margin-bottom: 26px; }
+  .seal { position: relative; width: 150px; height: 140px; }
+  .seal svg { width: 100%; height: 100%; overflow: visible; }
+  .seal .fill { transform-origin: 50% 100%; transform: scaleY(0); transition: transform 1.2s var(--ease) .2s; }
+  .seal .num { position: absolute; inset: 0; display: grid; place-items: center; padding-bottom: 12px; font-family: var(--display); font-size: 2.5rem; color: var(--paper); text-shadow: 0 2px 10px rgba(60, 10, 25, .45); }
+  .seal .num small { font-size: 1.1rem; opacity: .8; }
+  .r-kicker { font-size: .7rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--rose); margin-bottom: 8px; }
+  .r-rank { font-family: var(--display); font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1; color: var(--ink); }
+  .r-rank em { color: var(--rose); }
+  .r-desc { font-size: 1.04rem; line-height: 1.65; color: #4a3236; margin-bottom: 26px; max-width: 60ch; }
+  .concepts { border-top: 1px solid var(--paper-line); padding-top: 20px; }
+  .concepts h3 { font-family: var(--hand); font-size: 1.6rem; font-weight: 700; color: var(--ink-soft); margin-bottom: 12px; }
+  .concepts ol { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 18px; counter-reset: c; }
+  .concepts li { counter-increment: c; display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-bottom: 1px dotted var(--paper-line); font-size: .9rem; color: var(--ink-soft); }
+  .concepts li::before { content: counter(c, decimal-leading-zero); font-family: var(--display); font-style: italic; color: #b9a291; font-size: .95rem; }
+  .concepts li.got { color: var(--ink); }
+  .concepts li.got::before { color: var(--good); }
+  .concepts li .tick { margin-left: auto; font-family: var(--hand); font-size: 1.15rem; font-weight: 700; }
+  .concepts li.got .tick { color: var(--good); }
+  .concepts li:not(.got) .tick { color: #c1a99a; }
+  .ps { margin-top: 26px; font-family: var(--hand); font-size: 1.4rem; color: var(--rose); line-height: 1.25; }
+  .result-actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* Heart burst */
+  .burst { position: fixed; z-index: 60; pointer-events: none; width: 0; height: 0; }
+  .burst i {
+    position: absolute; left: -8px; top: -8px; width: 16px; height: 15px;
+    background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z' transform='translate(0 -3)' fill='%23c4415f'/%3E%3C/svg%3E");
+    animation: pop 1s var(--ease) forwards;
+  }
+  @keyframes pop {
+    0% { transform: translate(0,0) scale(.3) rotate(0); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(var(--s)) rotate(var(--r)); opacity: 0; }
+  }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  @media (max-width: 920px) {
+    .shell { grid-template-columns: 1fr; gap: 28px; }
+    .cover { position: relative; top: 0; }
+    .cover h1 { font-size: clamp(3rem, 13vw, 4.6rem); margin: 16px 0 14px; }
+    .tracker { margin-top: 24px; }
+    .credits { display: none; }
+    .credits.mobile { display: block; margin: 8px auto 0; text-align: center; }
+  }
+  @media (min-width: 921px) { .credits.mobile { display: none; } }
+  @media (max-width: 560px) {
+    .letter { transform: none; }
+    .q-head { flex-direction: column-reverse; }
+    .stamp { align-self: flex-end; margin-top: -8px; }
+    .result-top { grid-template-columns: 1fr; justify-items: start; gap: 14px; }
+    .concepts ol { grid-template-columns: 1fr; }
+    .hint { display: none; }
+    .actions { justify-content: flex-end; }
+    .opt.correct, .opt.wrong { padding-right: 18px; }
+    .opt .mark { position: static; transform: none; grid-column: 2; font-size: 1.1rem; margin-top: -6px; }
+  }
 </style>
 </head>
 <body>
-
-
-
-
 <div class="sky" aria-hidden="true">
- <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
- <div class="petals" id="petals"></div>
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+  <div class="petals" id="petals"></div>
 </div>
 <div class="grain" aria-hidden="true"></div>
-
-
-
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
- <defs>
-   <symbol id="heart" viewBox="0 0 24 22"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z" transform="translate(0 -3)"/></symbol>
-   <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
- </defs>
+  <defs>
+    <symbol id="heart" viewBox="0 0 24 22"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z" transform="translate(0 -3)"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
 </svg>
-
-
-
-
 <main class="shell">
+  <!-- Cover -->
+  <aside class="cover">
+    <div class="masthead"><i></i>Relationship Science · Campus Edition</div>
+    <h1>
+      <span>The</span>
+      <span><em>Psychology</em></span>
+      <span>of Love</span>
+    </h1>
+    <p class="lede">Seven real uni moments — canteen lunches, finals-week fights, O-Camp sparks. What does the research actually say about love that lasts?</p>
+    <span class="scribble">a field guide for the heart ↘</span>
+    <div class="tracker" aria-label="Progress">
+      <div class="tracker-top">
+        <div>
+          <div class="tracker-label" id="tracker-label">Scenarios</div>
+          <div class="big-num" id="big-num">07<small>moments</small></div>
+        </div>
+        <div style="text-align:right">
+          <div class="tracker-label">Hearts won</div>
+          <div class="big-num" id="score-num">0</div>
+        </div>
+      </div>
+      <div class="hearts-row" id="hearts-row"></div>
+    </div>
+    <p class="credits">Built on research by John Gottman, Robert Sternberg &amp; the science of attachment.</p>
+  </aside>
 
+  <!-- Letter -->
+  <section class="stage">
+    <article class="letter">
+      <!-- Intro -->
+      <div class="view active" id="view-intro">
+        <p class="salutation">Dear you,</p>
+        <p class="intro-body">Between lectures, group projects and 2&nbsp;a.m., love at uni gets <em>complicated</em>. Decades of research have quietly worked out what makes couples thrive and what breaks them apart.</p>
+        <ul class="intro-list">
+          <li><span class="n">i.</span>Read each everyday campus scenario.</li>
+          <li><span class="n">ii.</span>Pick the answer you think the science backs up.</li>
+          <li><span class="n">iii.</span>Get the psychology behind it, plus a takeaway for your own relationships.</li>
+        </ul>
+        <p class="sign">With love, <b>the Psychology Dept.</b></p>
+        <div class="actions">
+          <span class="hint">About 4 minutes · <kbd>Enter</kbd> to begin</span>
+          <button class="btn" id="start-btn" type="button">Open the first scenario <svg><use href="#arrow"/></svg></button>
+        </div>
+      </div>
 
+      <!-- Question -->
+      <div class="view" id="view-quiz">
+        <div class="q-head">
+          <div class="q-kicker" id="q-kicker">Scenario <b>01</b> / 07</div>
+          <div class="stamp" aria-label="Concept"><div class="stamp-inner"><svg><use href="#heart"/></svg><span id="q-concept"></span></div></div>
+        </div>
+        <h2 class="q-title" id="q-title"></h2>
+        <p class="q-text" id="q-text"></p>
+        <div class="options" id="options" role="group" aria-label="Answer options"></div>
+        <div class="note" id="note" aria-live="polite">
+          <div class="note-verdict" id="note-verdict"></div>
+          <div class="note-label"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg>The psychology</div>
+          <p class="note-science" id="note-science"></p>
+          <p class="note-take" id="note-take"></p>
+        </div>
+        <div class="actions">
+          <span class="hint">Press <kbd>A</kbd>–<kbd>D</kbd> to answer · <kbd>Enter</kbd> to continue</span>
+          <button class="btn" id="next-btn" type="button" disabled><span id="next-label">Next scenario</span> <svg><use href="#arrow"/></svg></button>
+        </div>
+      </div>
 
-
- <!-- Cover -->
- <aside class="cover">
-   <div class="masthead"><i></i>Relationship Science · Campus Edition</div>
-   <h1>
-     <span>The</span>
-     <span><em>Psychology</em></span>
-     <span>of Love</span>
-   </h1>
-   <p class="lede">Seven real uni moments — canteen lunches, finals-week fights, O-Camp sparks. What does the research actually say about love that lasts?</p>
-   <span class="scribble">a field guide for the heart ↘</span>
-
-
-
-
-   <div class="tracker" aria-label="Progress">
-     <div class="tracker-top">
-       <div>
-         <div class="tracker-label" id="tracker-label">Scenarios</div>
-         <div class="big-num" id="big-num">07<small>moments</small></div>
-       </div>
-       <div style="text-align:right">
-         <div class="tracker-label">Hearts won</div>
-         <div class="big-num" id="score-num">0</div>
-       </div>
-     </div>
-     <div class="hearts-row" id="hearts-row"></div>
-   </div>
-
-
-
-
-   <p class="credits">Built on research by John Gottman, Robert Sternberg &amp; the science of attachment.</p>
- </aside>
-
-
-
-
- <!-- Letter -->
- <section class="stage">
-   <article class="letter">
-
-
-
-
-     <!-- Intro -->
-     <div class="view enter" id="view-intro">
-       <p class="salutation">Dear you,</p>
-       <p class="intro-body">Between lectures, group projects and 2&nbsp;a.m., love at uni gets <em>complicated</em>. Decades of research have quietly worked out what makes couples thrive and what breaks them apart.</p>
-       <ul class="intro-list">
-         <li><span class="n">i.</span>Read each everyday campus scenario.</li>
-         <li><span class="n">ii.</span>Pick the answer you think the science backs up.</li>
-         <li><span class="n">iii.</span>Get the psychology behind it, plus a takeaway for your own relationships.</li>
-       </ul>
-       <p class="sign">With love, <b>the Psychology Dept.</b></p>
-       <div class="actions">
-         <span class="hint">About 4 minutes · <kbd>Enter</kbd> to begin</span>
-         <button class="btn" id="start-btn">Open the first scenario <svg><use href="#arrow"/></svg></button>
-       </div>
-     </div>
-
-
-
-
-     <!-- Question -->
-     <div class="view" id="view-quiz" hidden>
-       <div class="q-head">
-         <div class="q-kicker" id="q-kicker">Scenario <b>01</b> / 08</div>
-         <div class="stamp" aria-label="Concept"><div class="stamp-inner"><svg><use href="#heart"/></svg><span id="q-concept"></span></div></div>
-       </div>
-       <h2 class="q-title" id="q-title"></h2>
-       <p class="q-text" id="q-text"></p>
-       <div class="options" id="options" role="group" aria-label="Answer options"></div>
-
-
-
-
-       <div class="note" id="note" hidden aria-live="polite">
-         <div class="note-verdict" id="note-verdict"></div>
-         <div class="note-label"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.4 1 1.1 1 1.9V16h5v-.2c0-.8.4-1.5 1-1.9A6 6 0 0 0 12 3z"/></svg>The psychology</div>
-         <p class="note-science" id="note-science"></p>
-         <p class="note-take" id="note-take"></p>
-       </div>
-
-
-
-
-       <div class="actions">
-         <span class="hint">Press <kbd>A</kbd>–<kbd>D</kbd> to answer · <kbd>Enter</kbd> to continue</span>
-         <button class="btn" id="next-btn" disabled><span id="next-label">Next scenario</span> <svg><use href="#arrow"/></svg></button>
-       </div>
-     </div>
-
-
-
-
-     <!-- Results -->
-     <div class="view" id="view-result" hidden>
-       <div class="result-top">
-         <div class="seal">
-           <svg viewBox="0 0 24 22" aria-hidden="true">
-             <defs>
-               <linearGradient id="sealg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e48a9e"/><stop offset="1" stop-color="#7a1c38"/></linearGradient>
-               <clipPath id="heartclip"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z" transform="translate(0 -3)"/></clipPath>
-             </defs>
-             <g clip-path="url(#heartclip)">
-               <rect x="0" y="0" width="24" height="22" fill="#e8d7c6"/>
-               <rect class="fill" id="seal-fill" x="0" y="0" width="24" height="22" fill="url(#sealg)"/>
-             </g>
-           </svg>
-           <div class="num"><span><span id="final-score">0</span><small>/7</small></span></div>
-         </div>
-         <div>
-           <div class="r-kicker">Your love profile</div>
-           <h2 class="r-rank" id="r-rank"></h2>
-         </div>
-       </div>
-       <p class="r-desc" id="r-desc"></p>
-       <div class="concepts">
-         <h3>Concepts you explored</h3>
-         <ol id="concept-list"></ol>
-       </div>
-       <p class="ps" id="ps"></p>
-       <div class="result-actions">
-         <button class="btn" id="restart-btn">Take it again <svg><use href="#arrow"/></svg></button>
-         <button class="btn ghost" id="share-btn">Share with a friend</button>
-       </div>
-     </div>
-
-
-
-
-   </article>
-   <p class="credits mobile">Built on research by John Gottman, Robert Sternberg &amp; the science of attachment.</p>
- </section>
+      <!-- Results -->
+      <div class="view" id="view-result">
+        <div class="result-top">
+          <div class="seal">
+            <svg viewBox="0 0 24 22" aria-hidden="true">
+              <defs>
+                <linearGradient id="sealg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e48a9e"/><stop offset="1" stop-color="#7a1c38"/></linearGradient>
+                <clipPath id="heartclip"><path d="M12 21s-7.5-4.6-9.5-9.3C1.1 8.3 3.2 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.7 0 5.8 3.8 4.4 7.2C19.5 16.4 12 21 12 21z" transform="translate(0 -3)"/></clipPath>
+              </defs>
+              <g clip-path="url(#heartclip)">
+                <rect x="0" y="0" width="24" height="22" fill="#e8d7c6"/>
+                <rect class="fill" id="seal-fill" x="0" y="0" width="24" height="22" fill="url(#sealg)"/>
+              </g>
+            </svg>
+            <div class="num"><span><span id="final-score">0</span><small>/7</small></span></div>
+          </div>
+          <div>
+            <div class="r-kicker">Your love profile</div>
+            <h2 class="r-rank" id="r-rank"></h2>
+          </div>
+        </div>
+        <p class="r-desc" id="r-desc"></p>
+        <div class="concepts">
+          <h3>Concepts you explored</h3>
+          <ol id="concept-list"></ol>
+        </div>
+        <p class="ps" id="ps"></p>
+        <div class="result-actions">
+          <button class="btn" id="restart-btn" type="button">Take it again <svg><use href="#arrow"/></svg></button>
+          <button class="btn ghost" id="share-btn" type="button">Share with a friend</button>
+        </div>
+      </div>
+    </article>
+    <p class="credits mobile">Built on research by John Gottman, Robert Sternberg &amp; the science of attachment.</p>
+  </section>
 </main>
-
-
-
-
 <p class="sr" id="live" aria-live="polite"></p>
-
-
-
-
 <script>
- const questions = [
-   {
-     title: "The "Mind Reader" Myth",
-     text: "You had a bad day at school. Instead of telling your partner, you send one-word texts and wait for them to guess what is wrong. What trap is this?",
-     options: [
-       "The PERMA shift.",
-       "The myth: "If you love me, you will magically know what I need".",
-       "Active-Constructive Responding (ACR).",
-       "The 5:1 Golden Ratio."
-     ],
-     correct: 2,
-     concept: "The Mind-Reading Myth",
-     science: "Relationship research shows that expecting a partner to read your mind leads to frustration and miscommunication rather than closeness.",
-     takeaway: "Healthy love relies on open communication, not hoping your partner guesses your needs."
-   },
-   {
-     title: "The Good News Test",
-     text: "Your partner texts: 'OMG I got an A on my midterm exam!' According to Active-Constructive Responding (ACR), which reply builds the strongest relationship?",
-     options: [
-       "Nice. What do you want for dinner?' (Passive-Constructive).",
-       "The final exam will be way harder though.' (Active-Destructive).",
-       "Amazing!! You studied so hard—let’s celebrate!' (Active-Constructive).",
-       "Leaving them on 'Read' while scrolling TikTok. (Passive-Destructive)."
-     ],
-     correct: 3,
-     concept: "Active-Constructive Responding (ACR)",
-     science: "Gable et al.’s research shows that responding with genuine excitement when a partner shares good news boosts trust, intimacy, and daily relationship satisfaction.",
-     takeaway: "Celebrate your partner's wins enthusiastically using Active-Constructive Responding."
-   },
-   {
-     title: "The Positive Psychology Shift",
-     text: "Old relationship advice mostly focused on fixing fights and bad habits. What does the Positive Psychology (PERMA) approach focus on instead?",
-     options: [
-       "Avoiding all disagreements so you never fight.",
-       "Finding a 100% flaw-free, perfect soulmate before dating.",
-       "Building Love through Positive emotion, Engagement, Relationships, Meaning, and Accomplishment.",
-       "Keeping a strict scorecard of who says sorry more often."
-     ],
-     correct: 3,
-     concept: "Love & PERMA",
-     science: "Positive Psychology shifts the focus from merely fixing broken dynamics to actively building Positive emotion, Engagement, Relationships, Meaning, and Accomplishment.",
-     takeaway: "Flourishing Love is about growing happy, meaningful moments together, not just fixing problems."
-   },
-   {
-     title: "Different Personalities",
-     text: "You uni a huge party, but your partner is shy though they are super kind and curious to try new cafés with you. What is the 'Positive Way' to handle this?",
-     options: [
-       "Force them to go to every party until they become an extrovert.",
-       "Appreciate and grow their natural strengths (kindness and curiosity) instead of trying to change them.",
-       "Complain to your friends that your partner is boring.",
-       "Stop inviting them anywhere at all."
-     ],
-     correct: 2,
-     concept: "Partner Character Strengths",
-     science: "Research shows that recognizing and supporting a partner's existing character strengths creates higher relationship satisfaction than trying to reshape them into an ideal clone.",
-     takeaway: "Good love helps each other grow natural strengths instead of forcing your partner to change."
-   },
-   {
-     title: "Gottman’s Magic Ratio",
-     text: "Happy couples still argue! According to Dr. John Gottman, for every 1 negative interaction (like a fight), how many positive interactions do you need to stay stable?",
-     options: [
-       "1 : 1 (Equal balance).",
-       "2 : 1 (Double the love).",
-       "5 : 1 (The Golden Ratio).",
-       "10 : 1 (Perfection mode)."
-     ],
-     correct: 3,
-     concept: "Gottman’s 5:1 Golden Ratio",
-     science: "Dr. John Gottman’s longitudinal studies found that stable, happy couples maintain at least five positive interactions (warmth, humor, gratitude) for every one negative interaction.",
-     takeaway: "Conflict isn't the enemy—just balance 1 bad moment with 5 positive moments."
-   },
-   {
-     title: "The Instagram Highlight Reel Trap",
-     text: "You see an influencer couple posting fancy rooftop dates and #CoupleGoals while you and your partner are eating instant noodles in sweatpants. What should you remember?",
-     options: [
-       "Good love equals sweet social media posts, so your partner needs to step up.",
-       "Don’t compare your real life relationship to someone else’s online 'highlight reel'.",
-       "Couples who post a lot on Instagram never have boring nights or arguments.",
-       "You should fake a fancy date just to post photos back."
-     ],
-     correct: 2,
-     concept: "Social Comparison & The Highlight Reel Trap",
-     science: "Comparing your everyday life to curated social media posts creates unrealistic expectations and lowers satisfaction with real, healthy relationship moments.",
-     takeaway: "Never judge your full, real relationship against someone else's online highlight reel."
-   },
-   {
-     title: "The Post-Fight Move",
-     text: "You and your partner had a argument last night. According to the Three Practices of Flourishing Love, what is the healthiest move today?",
-     options: [
-       "Stonewalling: Ignore them for three days until they beg for forgiveness.",
-       "Make a repair move: Reach out to talk and reconnect instead of stonewalling.",
-       "Pretend nothing happened and change the subject.",
-       "Post a sad song lyric on your Instagram Close Friends story."
-     ],
-     correct: 2,
-     concept: "Repair Moves vs. Stonewalling",
-     science: "Relationship research identifies stonewalling (emotional shutdown) as toxic, whereas making small repair moves after conflict restores emotional safety and connection.",
-     takeaway: "Always make a repair move to reconnect after a fight instead of stonewalling."
-   }
- ];
-
-
-
-
- const letters = ["a", "b", "c", "d"];
- const pad = n => String(n).padStart(2, "0");
- const $ = id => document.getElementById(id);
- const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-
-
-
- let idx = 0, score = 0, results = [], answered = false, stage = "intro";
-
-
-
-
- /* Background petals */
- (function () {
-   if (reduceMotion) return;
-   const wrap = $("petals");
-   for (let i = 0; i < 18; i++) {
-     const s = document.createElement("span");
-     const size = 8 + Math.random() * 20;
-     s.style.cssText = `left:${Math.random() * 100}vw;width:${size}px;height:${size}px;` +
-       `animation-duration:${16 + Math.random() * 18}s;animation-delay:${-Math.random() * 30}s;` +
-       `--dx:${(Math.random() - .5) * 160}px;--rot:${(Math.random() - .5) * 120}deg;--o:${.08 + Math.random() * .18}`;
-     s.innerHTML = '<svg><use href="#heart"/></svg>';
-     wrap.appendChild(s);
-   }
- })();
-
-
-
-
- /* Heart tracker */
- function renderTracker() {
-   const row = $("hearts-row");
-   row.innerHTML = "";
-   questions.forEach((_, i) => {
-     const cls = results[i] === true ? "won" : results[i] === false ? "lost" : (stage === "quiz" && i === idx ? "now" : "");
-     row.insertAdjacentHTML("beforeend", `<svg class="${cls}" viewBox="0 0 24 22" aria-hidden="true"><use href="#heart"/></svg>`);
-   });
-   $("score-num").textContent = score;
-   if (stage === "quiz") {
-     $("tracker-label").textContent = "Scenario";
-     $("big-num").innerHTML = `${pad(idx + 1)}<small>/ ${pad(questions.length)}</small>`;
-   } else if (stage === "result") {
-     $("tracker-label").textContent = "Complete";
-     $("big-num").innerHTML = `${pad(questions.length)}<small>/ ${pad(questions.length)}</small>`;
-   } else {
-     $("tracker-label").textContent = "Scenarios";
-     $("big-num").innerHTML = `${pad(questions.length)}<small>moments</small>`;
-   }
- }
-
-
-
-
- function show(viewId) {
-   ["view-intro", "view-quiz", "view-result"].forEach(v => {
-     const el = $(v);
-     el.hidden = v !== viewId;
-     el.classList.remove("enter");
-   });
-   const el = $(viewId);
-   void el.offsetWidth;
-   el.classList.add("enter");
- }
-
-
-
-
- function loadQuestion() {
-   const q = questions[idx];
-   answered = false;
-   stage = "quiz";
-   show("view-quiz");
-   renderTracker();
-
-
-
-
-   $("q-kicker").innerHTML = `Scenario <b>${pad(idx + 1)}</b> / ${pad(questions.length)}`;
-   $("q-concept").textContent = q.concept;
-   $("q-title").textContent = q.title;
-   $("q-text").textContent = q.text;
-
-
-
-
-   const opts = $("options");
-   opts.innerHTML = "";
-   q.options.forEach((text, i) => {
-     const b = document.createElement("button");
-     b.className = "opt";
-     b.type = "button";
-     b.innerHTML = `<span class="key">${letters[i]}</span><span class="txt"></span>`;
-     b.querySelector(".txt").textContent = text;
-     b.setAttribute("aria-label", `Option ${letters[i].toUpperCase()}: ${text}`);
-     b.addEventListener("click", e => choose(i, b, e));
-     opts.appendChild(b);
-   });
-
-
-
-
-   $("note").hidden = true;
-   $("note").classList.remove("show");
-   $("next-btn").disabled = true;
-   $("next-label").textContent = idx === questions.length - 1 ? "Reveal my love profile" : "Next scenario";
- }
-
-
-
-
- function choose(i, btn, evt) {
-   if (answered) return;
-   answered = true;
-   const q = questions[idx];
-   const ok = i === q.correct;
-   results[idx] = ok;
-   if (ok) score++;
-
-
-
-
-   document.querySelectorAll(".opt").forEach((b, j) => {
-     b.disabled = true;
-     if (j === q.correct) {
-       b.classList.add("correct");
-       b.insertAdjacentHTML("beforeend", `<span class="mark">${ok ? "yes!" : "this one"}</span>`);
-     } else if (j === i) {
-       b.classList.add("wrong");
-       b.insertAdjacentHTML("beforeend", `<span class="mark">not quite</span>`);
-     } else b.classList.add("dim");
-   });
-
-
-
-
-   const v = $("note-verdict");
-   v.className = "note-verdict " + (ok ? "ok" : "no");
-   v.textContent = ok ? "Your heart & the research agree." : `So close — the science says ${letters[q.correct].toUpperCase()}.`;
-   $("note-science").textContent = q.science;
-   $("note-take").textContent = `“${q.takeaway}”`;
-   const note = $("note");
-   note.hidden = false;
-   void note.offsetWidth;
-   note.classList.add("show");
-
-
-
-
-   $("live").textContent = ok ? "Correct." : `Incorrect. The answer is ${letters[q.correct].toUpperCase()}.`;
-   $("next-btn").disabled = false;
-   renderTracker();
-
-
-
-
-   if (ok) {
-     const r = btn.getBoundingClientRect();
-     const x = evt && evt.clientX ? evt.clientX : r.left + 30;
-     const y = evt && evt.clientY ? evt.clientY : r.top + r.height / 2;
-     burst(x, y);
-   }
-   setTimeout(() => note.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" }), 120);
- }
-
-
-
-
- function burst(x, y, n = 14) {
-   if (reduceMotion) return;
-   const b = document.createElement("div");
-   b.className = "burst";
-   b.style.left = x + "px";
-   b.style.top = y + "px";
-   for (let k = 0; k < n; k++) {
-     const a = (Math.PI * 2 * k) / n + Math.random() * .5;
-     const d = 50 + Math.random() * 70;
-     const i = document.createElement("i");
-     i.style.cssText = `--x:${Math.cos(a) * d}px;--y:${Math.sin(a) * d - 30}px;--s:${.6 + Math.random() * .9};--r:${(Math.random() - .5) * 90}deg;animation-delay:${Math.random() * 80}ms`;
-     b.appendChild(i);
-   }
-   document.body.appendChild(b);
-   setTimeout(() => b.remove(), 1300);
- }
-
-
-
-
- function next() {
-   if (!answered) return;
-   idx++;
-   if (idx < questions.length) {
-     loadQuestion();
-     document.querySelector(".letter").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-   } else showResults();
- }
-
-
-
-
- function showResults() {
-   stage = "result";
-   show("view-result");
-   renderTracker();
-
-
-
-
-   const total = questions.length;
-   let rank, desc, ps;
-   if (score = 7) {
-     rank = "The Secure <em>Connector</em>";
-     desc = "You understand what relationship scientists find again and again: turning toward each other, repairing after conflict, and sharing power are what make love last.";
-     ps = "P.S. Your future partner is lucky. Keep turning toward the little moments.";
-   } else if (score >= 4) {
-     rank = "The Curious <em>Romantic</em>";
-     desc = "Your instincts are mostly on point. A few findings surprised you, and that's where the most interesting parts of love psychology are.";
-     ps = "P.S. Notice the bids for connection this week — they're everywhere.";
-   } else {
-     rank = "The Rom-Com <em>Dreamer</em>";
-     desc = "Movie myths may have shaped your idea of love. The good news is that healthy relationship habits can be learned, and you've just started.";
-     ps = "P.S. Real love is less grand gesture, more “wait, show me that reel.”";
-   }
-   $("r-rank").innerHTML = rank;
-   $("r-desc").textContent = desc;
-   $("ps").textContent = ps;
-
-
-
-
-   const list = $("concept-list");
-   list.innerHTML = "";
-   questions.forEach((q, i) => {
-     const li = document.createElement("li");
-     if (results[i]) li.className = "got";
-     li.innerHTML = `<span class="c"></span><span class="tick">${results[i] ? "✓" : "–"}</span>`;
-     li.querySelector(".c").textContent = q.concept;
-     list.appendChild(li);
-   });
-
-
-
-
-   const fill = $("seal-fill");
-   fill.style.transform = "scaleY(0)";
-   requestAnimationFrame(() => requestAnimationFrame(() => {
-     fill.style.transform = `scaleY(${Math.max(score / total, .04)})`;
-   }));
-
-
-
-
-   const out = $("final-score");
-   if (reduceMotion) out.textContent = score;
-   else {
-     const t0 = performance.now(), dur = 1400;
-     (function tick(t) {
-       const p = Math.min((t - t0) / dur, 1);
-       out.textContent = Math.round(score * (1 - Math.pow(1 - p, 3)));
-       if (p < 1) requestAnimationFrame(tick);
-     })(t0);
-   }
-
-
-
-
-   if (score >= 4) {
-     const r = document.querySelector(".seal").getBoundingClientRect();
-     setTimeout(() => burst(r.left + r.width / 2, r.top + r.height / 2, 22), 900);
-   }
-   $("live").textContent = `Finished. You scored ${score} out of ${total}.`;
-   document.querySelector(".letter").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
- }
-
-
-
-
- function restart() {
-   idx = 0; score = 0; results = [];
-   loadQuestion();
- }
-
-
-
-
- async function share() {
-   const text = `I got ${score}/${questions.length} on The Psychology of Love — how well do you know relationship science?`;
-   const btn = $("share-btn");
-   try {
-     if (navigator.share) await navigator.share({ title: "The Psychology of Love", text, url: location.href });
-     else {
-       await navigator.clipboard.writeText(`${text} ${location.href}`);
-       btn.textContent = "Link copied ♥";
-       setTimeout(() => (btn.textContent = "Share with a friend"), 2200);
-     }
-   } catch (_) { /* user cancelled */ }
- }
-
-
-
-
- $("start-btn").addEventListener("click", loadQuestion);
- $("next-btn").addEventListener("click", next);
- $("restart-btn").addEventListener("click", restart);
- $("share-btn").addEventListener("click", share);
-
-
-
-
- document.addEventListener("keydown", e => {
-   if (e.metaKey || e.ctrlKey || e.altKey) return;
-   const k = e.key.toLowerCase();
-   const onButton = document.activeElement && document.activeElement.tagName === "BUTTON";
-   if (stage === "intro" && k === "enter" && !onButton) { e.preventDefault(); loadQuestion(); return; }
-   if (stage !== "quiz") return;
-   const n = letters.indexOf(k) !== -1 ? letters.indexOf(k) : ["1", "2", "3", "4"].indexOf(k);
-   if (n !== -1 && !answered) {
-     const b = document.querySelectorAll(".opt")[n];
-     if (b) { const r = b.getBoundingClientRect(); choose(n, b, { clientX: r.left + 30, clientY: r.top + r.height / 2 }); }
-   } else if (k === "enter" && answered && !onButton) { e.preventDefault(); next(); }
- });
-
-
-
-
- renderTracker();
+  const questions = [
+    {
+      title: "The 'Mind Reader' Myth",
+      text: "You had a bad day at school. Instead of telling your partner, you send one-word texts and wait for them to guess what is wrong. What trap is this?",
+      options: [
+        "The PERMA shift.",
+        "The myth: 'If you love me, you will magically know what I need.'",
+        "Active-Constructive Responding (ACR).",
+        "The 5:1 Golden Ratio."
+      ],
+      correct: 1,
+      concept: "The Mind-Reading Myth",
+      science: "Relationship research shows that expecting a partner to read your mind leads to frustration and miscommunication rather than closeness.",
+      takeaway: "Healthy love relies on open communication, not hoping your partner guesses your needs."
+    },
+    {
+      title: "The Good News Test",
+      text: "Your partner texts: 'OMG I got an A on my midterm exam!' According to Active-Constructive Responding (ACR), which reply builds the strongest relationship?",
+      options: [
+        "'Nice. What do you want for dinner?' (Passive-Constructive).",
+        "'The final exam will be way harder though.' (Active-Destructive).",
+        "'Amazing!! You studied so hard—let’s celebrate!' (Active-Constructive).",
+        "Leaving them on 'Read' while scrolling TikTok. (Passive-Destructive)."
+      ],
+      correct: 2,
+      concept: "Active-Constructive Responding (ACR)",
+      science: "Gable et al.’s research shows that responding with genuine excitement when a partner shares good news boosts trust, intimacy, and daily relationship satisfaction.",
+      takeaway: "Celebrate your partner's wins enthusiastically using Active-Constructive Responding."
+    },
+    {
+      title: "The Positive Psychology Shift",
+      text: "Old relationship advice mostly focused on fixing fights and bad habits. What does the Positive Psychology (PERMA) approach focus on instead?",
+      options: [
+        "Avoiding all disagreements so you never fight.",
+        "Finding a 100% flaw-free, perfect soulmate before dating.",
+        "Building Love through Positive emotion, Engagement, Relationships, Meaning, and Accomplishment.",
+        "Keeping a strict scorecard of who says sorry more often."
+      ],
+      correct: 2,
+      concept: "Love & PERMA",
+      science: "Positive Psychology shifts the focus from merely fixing broken dynamics to actively building Positive emotion, Engagement, Relationships, Meaning, and Accomplishment.",
+      takeaway: "Flourishing Love is about growing happy, meaningful moments together, not just fixing problems."
+    },
+    {
+      title: "Different Personalities",
+      text: "You love a huge uni party, but your partner is shy—though they are super kind and curious to try new cafés with you. What is the 'Positive Way' to handle this?",
+      options: [
+        "Force them to go to every party until they become an extrovert.",
+        "Appreciate and grow their natural strengths (kindness and curiosity) instead of trying to change them.",
+        "Complain to your friends that your partner is boring.",
+        "Stop inviting them anywhere at all."
+      ],
+      correct: 1,
+      concept: "Partner Character Strengths",
+      science: "Research shows that recognizing and supporting a partner's existing character strengths creates higher relationship satisfaction than trying to reshape them into an ideal clone.",
+      takeaway: "Good love helps each other grow natural strengths instead of forcing your partner to change."
+    },
+    {
+      title: "Gottman’s Magic Ratio",
+      text: "Happy couples still argue! According to Dr. John Gottman, for every 1 negative interaction (like a fight), how many positive interactions do you need to stay stable?",
+      options: [
+        "1 : 1 (Equal balance).",
+        "2 : 1 (Double the love).",
+        "5 : 1 (The Golden Ratio).",
+        "10 : 1 (Perfection mode)."
+      ],
+      correct: 2,
+      concept: "Gottman’s 5:1 Golden Ratio",
+      science: "Dr. John Gottman’s longitudinal studies found that stable, happy couples maintain at least five positive interactions (warmth, humor, gratitude) for every one negative interaction.",
+      takeaway: "Conflict isn't the enemy—just balance 1 bad moment with 5 positive moments."
+    },
+    {
+      title: "The Instagram Highlight Reel Trap",
+      text: "You see an influencer couple posting fancy rooftop dates and #CoupleGoals while you and your partner are eating instant noodles in sweatpants. What should you remember?",
+      options: [
+        "Good love equals sweet social media posts, so your partner needs to step up.",
+        "Don’t compare your real-life relationship to someone else’s online 'highlight reel'.",
+        "Couples who post a lot on Instagram never have boring nights or arguments.",
+        "You should fake a fancy date just to post photos back."
+      ],
+      correct: 1,
+      concept: "Social Comparison & The Highlight Reel Trap",
+      science: "Comparing your everyday life to curated social media posts creates unrealistic expectations and lowers satisfaction with real, healthy relationship moments.",
+      takeaway: "Never judge your full, real relationship against someone else's online highlight reel."
+    },
+    {
+      title: "The Post-Fight Move",
+      text: "You and your partner had an argument last night. According to the Three Practices of Flourishing Love, what is the healthiest move today?",
+      options: [
+        "Stonewalling: Ignore them for three days until they beg for forgiveness.",
+        "Make a repair move: Reach out to talk and reconnect instead of stonewalling.",
+        "Pretend nothing happened and change the subject.",
+        "Post a sad song lyric on your Instagram Close Friends story."
+      ],
+      correct: 1,
+      concept: "Repair Moves vs. Stonewalling",
+      science: "Relationship research identifies stonewalling (emotional shutdown) as toxic, whereas making small repair moves after conflict restores emotional safety and connection.",
+      takeaway: "Always make a repair move to reconnect after a fight instead of stonewalling."
+    }
+  ];
+
+  const letters = ["a", "b", "c", "d"];
+  const pad = n => String(n).padStart(2, "0");
+  const $ = id => document.getElementById(id);
+  let idx = 0, score = 0, results = [], answered = false, stage = "intro";
+
+  /* Background petals */
+  (function () {
+    const wrap = $("petals");
+    if (!wrap) return;
+    for (let i = 0; i < 18; i++) {
+      const s = document.createElement("span");
+      const size = 8 + Math.random() * 20;
+      s.style.cssText = "left:" + (Math.random() * 100) + "vw;width:" + size + "px;height:" + size + "px;" +
+        "animation-duration:" + (16 + Math.random() * 18) + "s;animation-delay:" + (-Math.random() * 30) + "s;" +
+        "--dx:" + ((Math.random() - .5) * 160) + "px;--rot:" + ((Math.random() - .5) * 120) + "deg;--o:" + (.08 + Math.random() * .18);
+      s.innerHTML = '<svg><use href="#heart"/></svg>';
+      wrap.appendChild(s);
+    }
+  })();
+
+  function renderTracker() {
+    const row = $("hearts-row");
+    row.innerHTML = "";
+    questions.forEach(function(_, i) {
+      const cls = results[i] === true ? "won" : results[i] === false ? "lost" : (stage === "quiz" && i === idx ? "now" : "");
+      row.insertAdjacentHTML("beforeend", '<svg class="' + cls + '" viewBox="0 0 24 22" aria-hidden="true"><use href="#heart"/></svg>');
+    });
+    $("score-num").textContent = score;
+    if (stage === "quiz") {
+      $("tracker-label").textContent = "Scenario";
+      $("big-num").innerHTML = pad(idx + 1) + "<small>/ " + pad(questions.length) + "</small>";
+    } else if (stage === "result") {
+      $("tracker-label").textContent = "Complete";
+      $("big-num").innerHTML = pad(questions.length) + "<small>/ " + pad(questions.length) + "</small>";
+    } else {
+      $("tracker-label").textContent = "Scenarios";
+      $("big-num").innerHTML = pad(questions.length) + "<small>moments</small>";
+    }
+  }
+
+  function show(viewId) {
+    ["view-intro", "view-quiz", "view-result"].forEach(function(v) {
+      const el = $(v);
+      if (v === viewId) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
+      }
+    });
+  }
+
+  function startQuiz() {
+    idx = 0;
+    score = 0;
+    results = [];
+    loadQuestion();
+  }
+
+  function loadQuestion() {
+    const q = questions[idx];
+    answered = false;
+    stage = "quiz";
+    show("view-quiz");
+    renderTracker();
+    $("q-kicker").innerHTML = "Scenario <b>" + pad(idx + 1) + "</b> / " + pad(questions.length);
+    $("q-concept").textContent = q.concept;
+    $("q-title").textContent = q.title;
+    $("q-text").textContent = q.text;
+    const opts = $("options");
+    opts.innerHTML = "";
+    q.options.forEach(function(text, i) {
+      const b = document.createElement("button");
+      b.className = "opt";
+      b.type = "button";
+      b.innerHTML = '<span class="key">' + letters[i] + '</span><span class="txt"></span>';
+      b.querySelector(".txt").textContent = text;
+      b.setAttribute("aria-label", "Option " + letters[i].toUpperCase() + ": " + text);
+      b.addEventListener("click", function(e) { choose(i, b, e); });
+      opts.appendChild(b);
+    });
+    $("note").classList.remove("show");
+    $("next-btn").disabled = true;
+    $("next-label").textContent = idx === questions.length - 1 ? "Reveal my love profile" : "Next scenario";
+  }
+
+  function choose(i, btn, evt) {
+    if (answered) return;
+    answered = true;
+    const q = questions[idx];
+    const ok = i === q.correct;
+    results[idx] = ok;
+    if (ok) score++;
+    document.querySelectorAll(".opt").forEach(function(b, j) {
+      b.disabled = true;
+      if (j === q.correct) {
+        b.classList.add("correct");
+        b.insertAdjacentHTML("beforeend", '<span class="mark">' + (ok ? "yes!" : "this one") + '</span>');
+      } else if (j === i) {
+        b.classList.add("wrong");
+        b.insertAdjacentHTML("beforeend", '<span class="mark">not quite</span>');
+      } else {
+        b.classList.add("dim");
+      }
+    });
+    const v = $("note-verdict");
+    v.className = "note-verdict " + (ok ? "ok" : "no");
+    v.textContent = ok ? "Your heart & the research agree." : "So close — the science says " + letters[q.correct].toUpperCase() + ".";
+    $("note-science").textContent = q.science;
+    $("note-take").textContent = "“" + q.takeaway + "”";
+    const note = $("note");
+    note.classList.add("show");
+    $("live").textContent = ok ? "Correct." : "Incorrect. The answer is " + letters[q.correct].toUpperCase() + ".";
+    $("next-btn").disabled = false;
+    renderTracker();
+    if (ok) {
+      const r = btn.getBoundingClientRect();
+      const x = evt && evt.clientX ? evt.clientX : r.left + 30;
+      const y = evt && evt.clientY ? evt.clientY : r.top + r.height / 2;
+      burst(x, y);
+    }
+  }
+
+  function burst(x, y, n) {
+    n = n || 14;
+    const b = document.createElement("div");
+    b.className = "burst";
+    b.style.left = x + "px";
+    b.style.top = y + "px";
+    for (let k = 0; k < n; k++) {
+      const a = (Math.PI * 2 * k) / n + Math.random() * .5;
+      const d = 50 + Math.random() * 70;
+      const i = document.createElement("i");
+      i.style.cssText = "--x:" + (Math.cos(a) * d) + "px;--y:" + (Math.sin(a) * d - 30) + "px;--s:" + (.6 + Math.random() * .9) + ";--r:" + ((Math.random() - .5) * 90) + "deg;animation-delay:" + (Math.random() * 80) + "ms";
+      b.appendChild(i);
+    }
+    document.body.appendChild(b);
+    setTimeout(function() { b.remove(); }, 1300);
+  }
+
+  function next() {
+    if (!answered) return;
+    idx++;
+    if (idx < questions.length) {
+      loadQuestion();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      showResults();
+    }
+  }
+
+  function showResults() {
+    stage = "result";
+    show("view-result");
+    renderTracker();
+    const total = questions.length;
+    let rank, desc, ps;
+    if (score >= 6) {
+      rank = "The Secure <em>Connector</em>";
+      desc = "You understand what relationship scientists find again and again: turning toward each other, repairing after conflict, and sharing power are what make love last.";
+      ps = "P.S. Your future partner is lucky. Keep turning toward the little moments.";
+    } else if (score >= 4) {
+      rank = "The Curious <em>Romantic</em>";
+      desc = "Your instincts are mostly on point. A few findings surprised you, and that's where the most interesting parts of love psychology are.";
+      ps = "P.S. Notice the bids for connection this week — they're everywhere.";
+    } else {
+      rank = "The Rom-Com <em>Dreamer</em>";
+      desc = "Movie myths may have shaped your idea of love. The good news is that healthy relationship habits can be learned, and you've just started.";
+      ps = "P.S. Real love is less grand gesture, more “wait, show me that reel.”";
+    }
+    $("r-rank").innerHTML = rank;
+    $("r-desc").textContent = desc;
+    $("ps").textContent = ps;
+    const list = $("concept-list");
+    list.innerHTML = "";
+    questions.forEach(function(q, i) {
+      const li = document.createElement("li");
+      if (results[i]) li.className = "got";
+      li.innerHTML = '<span class="c"></span><span class="tick">' + (results[i] ? "✓" : "–") + '</span>';
+      li.querySelector(".c").textContent = q.concept;
+      list.appendChild(li);
+    });
+    const fill = $("seal-fill");
+    fill.style.transform = "scaleY(" + Math.max(score / total, .08) + ")";
+    $("final-score").textContent = score;
+
+    if (score >= 4) {
+      const r = document.querySelector(".seal").getBoundingClientRect();
+      setTimeout(function() { burst(r.left + r.width / 2, r.top + r.height / 2, 22); }, 500);
+    }
+    $("live").textContent = "Finished. You scored " + score + " out of " + total + ".";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function restart() {
+    idx = 0; score = 0; results = [];
+    loadQuestion();
+  }
+
+  function share() {
+    const text = "I got " + score + "/" + questions.length + " on The Psychology of Love — how well do you know relationship science?";
+    const btn = $("share-btn");
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text + " " + location.href);
+      btn.textContent = "Link copied ♥";
+      setTimeout(function() { btn.textContent = "Share with a friend"; }, 2200);
+    }
+  }
+
+  document.addEventListener("keydown", function(e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    const onButton = document.activeElement && document.activeElement.tagName === "BUTTON";
+    if (stage === "intro" && k === "enter" && !onButton) { e.preventDefault(); startQuiz(); return; }
+    if (stage !== "quiz") return;
+    const n = letters.indexOf(k) !== -1 ? letters.indexOf(k) : ["1", "2", "3", "4"].indexOf(k);
+    if (n !== -1 && !answered) {
+      const b = document.querySelectorAll(".opt")[n];
+      if (b) { const r = b.getBoundingClientRect(); choose(n, b, { clientX: r.left + 30, clientY: r.top + r.height / 2 }); }
+    } else if (k === "enter" && answered && !onButton) { e.preventDefault(); next(); }
+  });
+
+  /* Bind controls here rather than relying on inline onclick attributes.
+     This keeps the flow working if the page is embedded under a CSP or HTML
+     sanitizer that strips inline event handlers. */
+  [
+    ["start-btn", startQuiz],
+    ["next-btn", next],
+    ["restart-btn", restart],
+    ["share-btn", share]
+  ].forEach(function(pair) {
+    const el = $(pair[0]);
+    if (el) el.addEventListener("click", pair[1]);
+  });
+
+  renderTracker();
 </script>
 </body>
 </html>
